@@ -13,7 +13,11 @@ fun main() {
     contaJoao.numero = 321
     contaJoao.saldo = 200.0
     contaJoao.saca(50.0)
-    contaJoao.transfere(50.0, contaAndre)
+    var efetuouTransferencia = contaJoao.transfere(50.0, contaAndre)
+
+    if (efetuouTransferencia) {
+        println("A transferência ocorreu de ${contaJoao.titular} para ${contaAndre.titular}!")
+    }
 
     println("Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
     println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
@@ -34,11 +38,16 @@ class Conta {
         }
     }
 
-    fun transfere(valor: Double, destino: Conta) {
+//    fun transfere(valor: Double, destino: Conta): Unit { -> Esse é o padrão que não precisa digitar
+    fun transfere(valor: Double, destino: Conta): Boolean {
         if (valor <= saldo) {
             this.saca(valor)
             destino.deposita(valor)
+            return true
         }
+
+        return false
+
     }
 }
 
