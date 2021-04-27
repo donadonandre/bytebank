@@ -13,6 +13,7 @@ fun main() {
     contaJoao.numero = 321
     contaJoao.saldo = 200.0
     contaJoao.saca(50.0)
+    contaJoao.transfere(50.0, contaAndre)
 
     println("Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
     println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
@@ -30,6 +31,13 @@ class Conta {
     fun saca(valor: Double) {
         if (valor <= saldo) {
             saldo -= valor
+        }
+    }
+
+    fun transfere(valor: Double, destino: Conta) {
+        if (valor <= saldo) {
+            this.saca(valor)
+            destino.deposita(valor)
         }
     }
 }
