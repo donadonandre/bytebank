@@ -2,17 +2,11 @@ fun main() {
     val nomeBanco: String = "ByteBank"
     println("Bem vindo ao $nomeBanco")
 
-    val contaAndre = Conta()
-    contaAndre.titular = "André"
-    contaAndre.numero = 123
-    //contaAndre.saldo = 100.0
+    val contaAndre = Conta("André", 1000)
     contaAndre.deposita(100.0)
     contaAndre.deposita(50.0)
 
-    val contaJoao = Conta()
-    contaJoao.titular = "João"
-    contaJoao.numero = 321
-    //contaJoao.saldo = 200.0
+    val contaJoao = Conta("João", 1001)
     contaJoao.deposita(200.0)
     contaJoao.saca(50.0)
     var efetuouTransferencia = contaJoao.transfere(50.0, contaAndre)
@@ -25,11 +19,17 @@ fun main() {
     println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(var titular: String, var numero: Int) {
+//    var titular = titular
+//    var numero = numero
     var saldo = 0.0
         private set
+
+    // O construtor pode ficar direto na definição.
+//    constructor(titular: String, numero: Int) {
+//        this.titular = titular
+//        this.numero = numero
+//    }
 
 //        já existe isso encapsulado
 //        set(valor) {
