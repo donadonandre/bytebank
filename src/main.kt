@@ -1,40 +1,37 @@
 fun main() {
     val nomeBanco: String = "ByteBank"
-    print("Bem vindo ao $nomeBanco")
+    println("Bem vindo ao $nomeBanco")
 
-    val conta = Conta()
-    conta.titular = "André"
-    println(conta.titular)
-    // Na primeira execução, o valor de conta.titular é "" ainda.
+    val contaAndre = Conta()
+    contaAndre.titular = "André"
+    contaAndre.numero = 123
+    contaAndre.saldo = 100.0
+    contaAndre.deposita(50.0)
 
     val contaJoao = Conta()
     contaJoao.titular = "João"
-    var contaMaria = contaJoao
+    contaJoao.numero = 321
+    contaJoao.saldo = 200.0
+    contaJoao.saca(50.0)
 
-    contaMaria.titular = "Maria"
-    contaJoao.titular = "João"
-
-    println("Conta João: ${contaJoao.titular}")
-    println("Conta Maria: ${contaMaria.titular}")
-
-
-    /*val titular = "André"
-    val numeroConta: Int = 1000
-    var saldo: Double = 0.0
-
-    println()
-    println("Seja vem vindo $titular")
-    println("Sua conta é $numeroConta")
-    println("Seu saldo é $saldo")
-
-    testaCondicoes(saldo)
-    executandoFors()*/
+    println("Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
+    println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+
+    fun deposita(valorADepositar: Double) {
+        saldo += valorADepositar
+    }
+
+    fun saca(valor: Double) {
+        if (valor <= saldo) {
+            saldo -= valor
+        }
+    }
 }
 
 fun testaCondicoes(saldo: Double) {
