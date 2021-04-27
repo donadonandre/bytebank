@@ -1,9 +1,15 @@
 fun main() {
-    print("Bem vindo ao Bytebank")
+    val nomeBanco: String = "ByteBank"
+    val numeroBanco = 10
 
-    var titular = "André" // Variável
-    val numeroBanco = 10 // Constante
+    print("Bem vindo ao $nomeBanco")
+
+    val titular = "André"
+    val numeroConta: Int = 1000
+    var saldo: Double = 0.0
 
     println()
-    println("Seja vem vindo ao banco de código $numeroBanco")
+    println("Seja vem vindo $titular")
+    println("Sua conta é $numeroConta")
+    println("Seu saldo é $saldo")
 }
