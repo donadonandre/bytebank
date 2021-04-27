@@ -13,13 +13,15 @@ fun main() {
     println("Sua conta é $numeroConta")
     println("Seu saldo é $saldo")
 
-    if (saldo > 0.0) {
-        println("Você tem saldo em conta!")
-    }
-    else if (saldo == 0.0) {
-        println("Sua conta está zerada!")
-    }
-    else {
-        println("Você está com saldo devedor!")
+    when {
+        saldo > 0.0 -> {
+            println("Você tem saldo em conta!")
+        }
+        saldo == 0.0 -> {
+            println("Sua conta está zerada!")
+        }
+        else -> {
+            println("Você está com saldo devedor!")
+        }
     }
 }
