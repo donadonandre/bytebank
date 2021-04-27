@@ -1,10 +1,15 @@
 fun main() {
     val nomeBanco: String = "ByteBank"
-    val numeroBanco = 10
-
     print("Bem vindo ao $nomeBanco")
 
-    val titular = "André"
+    val conta = Conta()
+    conta.titular = "André"
+    println(conta.titular)
+    // Na primeira execução, o valor de conta.titular é "" ainda.
+
+
+
+    /*val titular = "André"
     val numeroConta: Int = 1000
     var saldo: Double = 0.0
 
@@ -14,7 +19,13 @@ fun main() {
     println("Seu saldo é $saldo")
 
     testaCondicoes(saldo)
-    executandoFors()
+    executandoFors()*/
+}
+
+class Conta {
+    var titular = ""
+    var numero = 0
+    var saldo = 0.0
 }
 
 fun testaCondicoes(saldo: Double) {
