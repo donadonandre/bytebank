@@ -5,13 +5,15 @@ fun main() {
     val contaAndre = Conta()
     contaAndre.titular = "André"
     contaAndre.numero = 123
-    contaAndre.setSaldo(100.0)
+    //contaAndre.saldo = 100.0
+    contaAndre.deposita(100.0)
     contaAndre.deposita(50.0)
 
     val contaJoao = Conta()
     contaJoao.titular = "João"
     contaJoao.numero = 321
-    contaJoao.setSaldo(200.0)
+    //contaJoao.saldo = 200.0
+    contaJoao.deposita(200.0)
     contaJoao.saca(50.0)
     var efetuouTransferencia = contaJoao.transfere(50.0, contaAndre)
 
@@ -19,24 +21,21 @@ fun main() {
         println("A transferência ocorreu de ${contaJoao.titular} para ${contaAndre.titular}!")
     }
 
-    println("Conta do ${contaAndre.titular} tem ${contaAndre.getSaldo()}")
-    println("Conta do ${contaJoao.titular} tem ${contaJoao.getSaldo()}")
+    println("Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
+    println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
 }
 
 class Conta {
     var titular = ""
     var numero = 0
-    private var saldo = 0.0
+    var saldo = 0.0
+        private set
 
-    fun getSaldo(): Double {
-        return this.saldo
-    }
-
-    fun setSaldo(valor: Double) {
-        if (valor > 0) {
-            this.saldo += valor
-        }
-    }
+//        já existe isso encapsulado
+//        set(valor) {
+//            field = valor
+//        }
+//        get(){return field}
 
     fun deposita(valorADepositar: Double) {
         saldo += valorADepositar
