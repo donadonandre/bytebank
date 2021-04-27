@@ -5,13 +5,13 @@ fun main() {
     val contaAndre = Conta()
     contaAndre.titular = "André"
     contaAndre.numero = 123
-    contaAndre.saldo = 100.0
+    contaAndre.setSaldo(100.0)
     contaAndre.deposita(50.0)
 
     val contaJoao = Conta()
     contaJoao.titular = "João"
     contaJoao.numero = 321
-    contaJoao.saldo = 200.0
+    contaJoao.setSaldo(200.0)
     contaJoao.saca(50.0)
     var efetuouTransferencia = contaJoao.transfere(50.0, contaAndre)
 
@@ -19,14 +19,24 @@ fun main() {
         println("A transferência ocorreu de ${contaJoao.titular} para ${contaAndre.titular}!")
     }
 
-    println("Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
-    println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
+    println("Conta do ${contaAndre.titular} tem ${contaAndre.getSaldo()}")
+    println("Conta do ${contaJoao.titular} tem ${contaJoao.getSaldo()}")
 }
 
 class Conta {
     var titular = ""
     var numero = 0
-    var saldo = 0.0
+    private var saldo = 0.0
+
+    fun getSaldo(): Double {
+        return this.saldo
+    }
+
+    fun setSaldo(valor: Double) {
+        if (valor > 0) {
+            this.saldo += valor
+        }
+    }
 
     fun deposita(valorADepositar: Double) {
         saldo += valorADepositar
@@ -47,30 +57,29 @@ class Conta {
         }
 
         return false
+    }
 
+    fun testaCondicoes(saldo: Double) {
+        when {
+            saldo > 0.0 -> println("Você tem saldo em conta!")
+            saldo == 0.0 -> println("Sua conta está zerada!")
+            else -> println("Você está com saldo devedor!")
+        }
     }
 }
 
-fun testaCondicoes(saldo: Double) {
-    when {
-        saldo > 0.0 -> println("Você tem saldo em conta!")
-        saldo == 0.0 -> println("Sua conta está zerada!")
-        else -> println("Você está com saldo devedor!")
-    }
-}
-
-fun executandoFors() {
-    println("-----------")
-    println("PRIMEIRO FOR")
-
-    for (i in 1..5) {
-        println(i)
-    }
-
-    println("-----------")
-    println("SEGUNDO FOR")
-
-    for (i in 6 downTo 0 step 2) {
-        println(i)
-    }
-}
+//fun executandoFors() {
+//    println("-----------")
+//    println("PRIMEIRO FOR")
+//
+//    for (i in 1..5) {
+//        println(i)
+//    }
+//
+//    println("-----------")
+//    println("SEGUNDO FOR")
+//
+//    for (i in 6 downTo 0 step 2) {
+//        println(i)
+//    }
+//}
