@@ -7,6 +7,15 @@ fun main() {
     println(conta.titular)
     // Na primeira execução, o valor de conta.titular é "" ainda.
 
+    val contaJoao = Conta()
+    contaJoao.titular = "João"
+    var contaMaria = contaJoao
+
+    contaMaria.titular = "Maria"
+    contaJoao.titular = "João"
+
+    println("Conta João: ${contaJoao.titular}")
+    println("Conta Maria: ${contaMaria.titular}")
 
 
     /*val titular = "André"
