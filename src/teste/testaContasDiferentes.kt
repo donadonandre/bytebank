@@ -1,7 +1,11 @@
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+import modelo.Gerente
+
 fun testaContasDiferentes() {
     val funcionario = Gerente(nome = "André", cpf = "111.111.111-11", salario = 1000.0, senha = 12345)
 
-    println("Funcionario ${funcionario.nome}")
+    println("modelo.Funcionario ${funcionario.nome}")
     println("Bonificação ${funcionario.bonificacao}")
 
     val contaCorrente = ContaCorrente(

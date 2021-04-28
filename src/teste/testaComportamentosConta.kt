@@ -1,3 +1,5 @@
+import modelo.ContaCorrente
+
 fun testaComportamentosConta() {
     val nomeBanco: String = "ByteBank"
     println("Bem vindo ao $nomeBanco")
@@ -15,6 +17,6 @@ fun testaComportamentosConta() {
         println("A transferência ocorreu de ${contaJoao.titular} para ${contaAndre.titular}!")
     }
 
-    println("Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
-    println("Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
+    println("modelo.Conta do ${contaAndre.titular} tem ${contaAndre.saldo}")
+    println("modelo.Conta do ${contaJoao.titular} tem ${contaJoao.saldo}")
 }
