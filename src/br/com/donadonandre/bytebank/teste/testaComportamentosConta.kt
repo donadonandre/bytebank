@@ -1,4 +1,4 @@
-import modelo.ContaCorrente
+import br.com.donadonandre.bytebank.modelo.ContaCorrente
 
 fun testaComportamentosConta() {
     val nomeBanco: String = "ByteBank"

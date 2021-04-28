@@ -1,7 +1,7 @@
-import modelo.Cliente
-import modelo.Diretor
-import modelo.Gerente
-import modelo.SistemaInterno
+import br.com.donadonandre.bytebank.modelo.Cliente
+import br.com.donadonandre.bytebank.modelo.Diretor
+import br.com.donadonandre.bytebank.modelo.Gerente
+import br.com.donadonandre.bytebank.modelo.SistemaInterno
 
 fun testaAutenticacao() {
     val gerente = Gerente(nome = "André", cpf = "111.111.111-11", salario = 1000.0, senha = 12345)

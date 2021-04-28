@@ -1,6 +1,4 @@
-package modelo
-
-import modelo.Autenticavel
+package br.com.donadonandre.bytebank.modelo
 
 class SistemaInterno {
 

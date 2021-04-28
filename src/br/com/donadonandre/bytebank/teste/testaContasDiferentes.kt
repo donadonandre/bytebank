@@ -1,6 +1,6 @@
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
-import modelo.Gerente
+import br.com.donadonandre.bytebank.modelo.ContaCorrente
+import br.com.donadonandre.bytebank.modelo.ContaPoupanca
+import br.com.donadonandre.bytebank.modelo.Gerente
 
 fun testaContasDiferentes() {
     val funcionario = Gerente(nome = "André", cpf = "111.111.111-11", salario = 1000.0, senha = 12345)

@@ -1,4 +1,4 @@
-package modelo
+package br.com.donadonandre.bytebank.modelo
 
 class ContaPoupanca(
     titular: String,

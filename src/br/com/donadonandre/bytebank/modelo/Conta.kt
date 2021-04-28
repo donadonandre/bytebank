@@ -1,4 +1,4 @@
-package modelo
+package br.com.donadonandre.bytebank.modelo
 
 abstract class Conta(var titular: String, val numero: Int) {
 
