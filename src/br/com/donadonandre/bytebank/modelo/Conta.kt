@@ -12,7 +12,7 @@ abstract class Conta(
         protected set
 
     init {
-        totalContas++
+        Contador.total++
     }
 
     fun deposita(valorADepositar: Double) {

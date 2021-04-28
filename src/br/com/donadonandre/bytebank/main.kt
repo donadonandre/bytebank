@@ -3,6 +3,12 @@ import br.com.donadonandre.bytebank.modelo.Cliente
 import br.com.donadonandre.bytebank.modelo.ContaPoupanca
 import br.com.donadonandre.bytebank.modelo.totalContas
 
+// Object Declarations
+// Singleton
+object Contador {
+    var total = 0
+}
+
 fun main() {
 
     //var totalContas = 0
@@ -14,7 +20,7 @@ fun main() {
     //println("Total de contas: ${totalContas}")
     //println("Total de contas: ${contaPoupanca.total}")
 
-    println("Total de contas: ${totalContas}")
+    println("Total de contas: ${Contador.total}")
 
     // Object Expressions
     val objAndre = object : Autenticavel {
