@@ -1,7 +1,7 @@
+import br.com.donadonandre.bytebank.modelo.Autenticavel
 import br.com.donadonandre.bytebank.modelo.Cliente
 import br.com.donadonandre.bytebank.modelo.ContaPoupanca
-
-var totalContas = 0
+import br.com.donadonandre.bytebank.modelo.totalContas
 
 fun main() {
 
@@ -15,5 +15,19 @@ fun main() {
     //println("Total de contas: ${contaPoupanca.total}")
 
     println("Total de contas: ${totalContas}")
+
+    // Object Expressions
+    val objAndre = object : Autenticavel {
+        val nome: String = "Andre"
+        val idade: Int = 32
+
+        fun digaOla() : String {
+            return "Olá"
+        }
+
+        override fun autentica(senha: Int): Boolean {
+            return true
+        }
+    }
 }
 
