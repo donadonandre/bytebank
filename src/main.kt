@@ -1,4 +1,7 @@
 fun main() {
-    testaAutenticacao()
+    val palavra: String = ""
+    val palavraJava: java.lang.String = java.lang.String("")
+
+
 }
 
