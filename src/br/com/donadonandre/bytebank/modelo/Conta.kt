@@ -11,8 +11,13 @@ abstract class Conta(
     var saldo = 0.0
         protected set
 
+    companion object Contador { // Não precisa usar o Contador aqui
+        var total = 0
+            private set
+    }
+
     init {
-        Contador.total++
+        total++ // Contador.total++ implícito
     }
 
     fun deposita(valorADepositar: Double) {
