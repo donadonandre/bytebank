@@ -3,7 +3,7 @@ abstract class FuncionarioAdmin(
     cpf: String,
     salario: Double,
     val senha: Int
-) : Funcionario(
+) : Funcionario (
     nome = nome,
     cpf = cpf,
     salario = salario
