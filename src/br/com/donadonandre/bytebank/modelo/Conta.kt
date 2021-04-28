@@ -8,6 +8,12 @@ abstract class Conta(
     var saldo = 0.0
         protected set
 
+    var total = 0
+
+    init {
+        total++
+    }
+
     fun deposita(valorADepositar: Double) {
         saldo += valorADepositar
     }

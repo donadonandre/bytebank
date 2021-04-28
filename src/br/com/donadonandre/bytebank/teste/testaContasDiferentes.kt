@@ -1,3 +1,4 @@
+import br.com.donadonandre.bytebank.modelo.Cliente
 import br.com.donadonandre.bytebank.modelo.ContaCorrente
 import br.com.donadonandre.bytebank.modelo.ContaPoupanca
 import br.com.donadonandre.bytebank.modelo.Gerente
@@ -9,12 +10,12 @@ fun testaContasDiferentes() {
     println("Bonificação ${funcionario.bonificacao}")
 
     val contaCorrente = ContaCorrente(
-        titular = "André",
+        titular = Cliente(nome="André",cpf="",senha=1),
         numero = 1000
     )
 
     val contaPoupanca = ContaPoupanca(
-        titular = "Maria",
+        titular = Cliente(nome="Maria",cpf="",senha=1),
         numero = 1001
     )
 
