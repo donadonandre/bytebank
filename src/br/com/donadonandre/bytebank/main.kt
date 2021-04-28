@@ -10,6 +10,8 @@ fun main() {
     imprime("teste")
     imprime(endereco)
     imprime(Any()) // Ele mapeia para um Object do Java
+
+
 }
 
 fun imprime(valor: Any) {
