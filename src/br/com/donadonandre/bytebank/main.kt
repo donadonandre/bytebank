@@ -1,6 +1,8 @@
 import br.com.donadonandre.bytebank.modelo.Cliente
 import br.com.donadonandre.bytebank.modelo.ContaPoupanca
 
+var totalContas = 0
+
 fun main() {
 
     //var totalContas = 0
@@ -10,7 +12,8 @@ fun main() {
     //totalContas++
 
     //println("Total de contas: ${totalContas}")
-    println("Total de contas: ${contaPoupanca.total}")
+    //println("Total de contas: ${contaPoupanca.total}")
 
+    println("Total de contas: ${totalContas}")
 }
 

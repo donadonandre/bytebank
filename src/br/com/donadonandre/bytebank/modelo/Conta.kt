@@ -1,5 +1,7 @@
 package br.com.donadonandre.bytebank.modelo
 
+import totalContas
+
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
@@ -8,10 +10,8 @@ abstract class Conta(
     var saldo = 0.0
         protected set
 
-    var total = 0
-
     init {
-        total++
+        totalContas++
     }
 
     fun deposita(valorADepositar: Double) {
