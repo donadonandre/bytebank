@@ -1,7 +1,24 @@
-abstract class Conta(var titular: String, val numero: Int) {
+package br.com.donadonandre.bytebank.modelo
+
+var totalContas = 0
+    private set
+
+abstract class Conta(
+    var titular: Cliente,
+    val numero: Int
+) {
 
     var saldo = 0.0
         protected set
+
+    companion object Contador { // Não precisa usar o Contador aqui
+        var total = 0
+            private set
+    }
+
+    init {
+        total++ // Contador.total++ implícito
+    }
 
     fun deposita(valorADepositar: Double) {
         saldo += valorADepositar

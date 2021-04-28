@@ -1,3 +1,5 @@
+package br.com.donadonandre.bytebank.modelo
+
 abstract class Funcionario(
     val nome: String,
     val cpf: String,
