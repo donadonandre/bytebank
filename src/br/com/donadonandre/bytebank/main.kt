@@ -1,31 +1,18 @@
-import br.com.donadonandre.bytebank.modelo.*
-
+import br.com.donadonandre.bytebank.modelo.Endereco
 
 fun main() {
+    val endereco = Endereco()
 
-    //var totalContas = 0
+    imprime(Unit)
+    imprime(1)
+    imprime(1.0)
+    imprime(true)
+    imprime("teste")
+    imprime(endereco)
+    imprime(Any()) // Ele mapeia para um Object do Java
+}
 
-    val andre = Cliente(nome="André",cpf="",senha=1)
-    val contaPoupanca = ContaPoupanca(titular = andre, numero = 1000)
-    //totalContas++
-
-    //println("Total de contas: ${totalContas}")
-    //println("Total de contas: ${contaPoupanca.total}")
-
-    println("Total de contas: ${Conta.total}") // ${Conta.Contador.total} implícito
-
-    // Object Expressions
-    val objAndre = object : Autenticavel {
-        val nome: String = "Andre"
-        val idade: Int = 32
-
-        fun digaOla() : String {
-            return "Olá"
-        }
-
-        override fun autentica(senha: Int): Boolean {
-            return true
-        }
-    }
+fun imprime(valor: Any) {
+    println(valor)
 }
 
